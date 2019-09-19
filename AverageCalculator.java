@@ -1,20 +1,21 @@
 import java.util.Scanner;
 
 public class AverageCalculator {
-    public static void computeAverage() {
-        int total = 0;
-        int num = 0;
+    public static void start(){
         Scanner input = new Scanner(System.in);
-        int curNumber;
 
-        System.out.println("Enter your next input?");
-        curNumber = input.nextInt();
-        while (curNumber!=-1) {
-            total += curNumber;
-            num++;
-            System.out.println("Enter your next input?");
-            curNumber = input.nextInt();
+        int total = 0;
+        int count = 0;
+        int nextEntry;
+
+        System.out.println("Enter your number?");
+        nextEntry = input.nextInt();
+        while(nextEntry!=-1){
+            total+=nextEntry;
+            count++;
+            System.out.println("Enter your number?");
+            nextEntry = input.nextInt();
         }
-        System.out.printf("Average for total %d number entered is %.2f?", num, (float) total/num);
+        System.out.printf("Average: %.2f\n", (double)total/count);
     }
 }
